@@ -3,15 +3,13 @@ import { findInactiveUsers, findUserById, findUsers, updateUser } from "../servi
 
 export const getUsers = async (req, res) => {
   try {
-    const users = await findUsers();
-    res.status(200).json({ users });
-  } catch (error) {
-    req.logger.fatal("Error en el servidor");
-    res.status(500).send({
-      message: "Hubo un error en el servidor",
-      error: error.message,
-    });
-  }
+    const users = await findUsers()
+    return res.status(200).send(users)
+
+} catch (error) {
+    req.logger.fatal("Hubo un error en el servidor")
+    return res.status(500).send(error)
+}
 };
 
 export const deleteInactiveUsers = async (req, res, next) => {

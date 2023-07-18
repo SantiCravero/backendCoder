@@ -14,7 +14,7 @@ form.addEventListener('submit', e => {
         body: new URLSearchParams(formData).toString()
     }
 
-    fetch('http://localhost:5000/api/session/register', options)
+    fetch('https://backendcoder-production-abea.up.railway.app//api/session/register', options)
         .then(response => {
             if (!response.ok) {
                 return Swal.fire({

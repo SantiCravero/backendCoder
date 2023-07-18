@@ -7,7 +7,7 @@ restorePasswordForm.addEventListener("submit", async (e) => {
 
   if (password === passwordVerification) {
     try {
-      const url = "http://localhost:5000/api/session/password/reset";
+      const url = "https://backendcoder-production-abea.up.railway.app//api/session/password/reset";
       const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -31,7 +31,7 @@ restorePasswordForm.addEventListener("submit", async (e) => {
           showConfirmButton: false,
           timer: 2000,
         }).then(() => {
-          window.location.href = `http://localhost:5000/login`;
+          window.location.href = `https://backendcoder-production-abea.up.railway.app//login`;
         });
       }
     } catch (error) {

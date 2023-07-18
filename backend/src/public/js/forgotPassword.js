@@ -2,7 +2,7 @@ const sendMailForm = document.getElementById("mailForm")
 sendMailForm.addEventListener('submit', async (e) => {
   e.preventDefault()
   const email = document.getElementById("email").value;
-    const url = 'http://localhost:5000/api/session/password/createlink';
+    const url = 'https://backendcoder-production-abea.up.railway.app//api/session/password/createlink';
     
     const response = await fetch(url, {
       method: 'POST',

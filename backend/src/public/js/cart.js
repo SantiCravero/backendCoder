@@ -1,5 +1,5 @@
 const getCart = async () => {
-    const response = await fetch(`http://localhost:5000/api/cart`, {
+    const response = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart`, {
         method: 'GET',
     });
 
@@ -8,11 +8,11 @@ const getCart = async () => {
         return Swal.fire({
             position: 'center',
             icon: 'error',
-            title: `${cart.message}`,
+            title: `Debe loguearse para visualizar el carrito`,
             showConfirmButton: false,
             timer: 2000
         }).then(() => {
-            window.location.href = `http://localhost:5000/login`;
+            window.location.href = `https://backendcoder-production-abea.up.railway.app//login`;
         })
     }
     const cartProducts = cart.cart.products;
@@ -66,7 +66,7 @@ const getCart = async () => {
 
             // Boton de sumar cantidad
             document.getElementById(`masCant${singleProduct._id}`).addEventListener('click', async () => {
-                const masCantResponse = await fetch(`http://localhost:5000/api/cart/product/${singleProduct._id}`, {
+                const masCantResponse = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart/product/${singleProduct._id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ const getCart = async () => {
 
             // Boton de restar cantidad
             document.getElementById(`menosCant${singleProduct._id}`).addEventListener('click', async () => {
-                const menosCantResponse = await fetch(`http://localhost:5000/api/cart/product/${singleProduct._id}`, {
+                const menosCantResponse = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart/product/${singleProduct._id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const getCart = async () => {
 
             // Boton para eliminar un producto
             document.getElementById(`btnBorrar${singleProduct._id}`).addEventListener("click", async () => {
-                const deleteAction = await fetch(`http://localhost:5000/api/cart/product/${singleProduct._id}`, {
+                const deleteAction = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart/product/${singleProduct._id}`, {
                     method: 'DELETE',
                 })
                 const deleteResponse = await deleteAction.json()
@@ -141,7 +141,7 @@ const getCart = async () => {
 // Boton para generar ticket
 document.getElementById('checkoutButton').addEventListener('click', async (e) => {
     e.preventDefault();
-    const ticketResponse = await fetch(`http://localhost:5000/api/cart/purchase`, {
+    const ticketResponse = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart/purchase`, {
         method: 'POST',
     });
     const checkoutJson = await ticketResponse.json()
@@ -162,7 +162,7 @@ document.getElementById('checkoutButton').addEventListener('click', async (e) =>
         showConfirmButton: false,
         timer: 2000
     }).then(() => {
-        window.location.href = `http://localhost:5000/product`;
+        window.location.href = `https://backendcoder-production-abea.up.railway.app//product`;
     })
 })
 

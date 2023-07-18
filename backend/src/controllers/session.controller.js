@@ -221,7 +221,7 @@ async function generatePasswordResetLink(user, req, res) {
         signed: true,
         maxAge: 1000 * 60 * 60
     })
-    const link = `http://localhost:5000/resetPassword`
+    const link = `https://backendcoder-production-abea.up.railway.app//resetPassword`
     return link
 }
   

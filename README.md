@@ -1,46 +1,62 @@
-# 👋 Trabajo Final Backend Coderhouse
+# 💻 Backend - Proyecto Final Coderhouse
 _Comisión: 39685
 _Alumno: Santiago Cravero
 
 ## Requerimientos previos 📋
 
-_Para utilizar la aplicación necesita instalar las dependencias con el siguiente comando:_
+_Antes de iniciar la aplicacion, se necesita instalar las dependencias con el siguiente comando:_
 ```
 npm i
 ```
 ## Rutas de la API a testear
 
+###### Todas las rutas detalladas pueden ser testeadas en Postman (excepto las rutas de 'vistas en la web', que se testean en un navegador) 
 ### Products: 
 ```
-http://localhost:5000/api/product [GET]
-http://localhost:5000/api/product/:pid [GET]
-http://localhost:5000/api/product [POST]
-http://localhost:5000/api/product/:pid [PUT]
-http://localhost:5000/api/product/:pid [DELETE]
+https://backendcoder-production-abea.up.railway.app//api/product [GET] => Ruta para visualizar TODOS los productos
+https://backendcoder-production-abea.up.railway.app//api/product/:pid [GET] => Ruta para visualizar UN producto especifico
+https://backendcoder-production-abea.up.railway.app//api/product [POST] => Ruta para crear un producto
+https://backendcoder-production-abea.up.railway.app//api/product/:pid [PUT] => Ruta para actualizar un producti
+https://backendcoder-production-abea.up.railway.app//api/product/:pid [DELETE] => Ruta para eliminar un producto
 ```
 ### Cart:
 ```
-http://localhost:5000/api/cart [GET]
-http://localhost:5000/api/cart/:cid [PUT]
-http://localhost:5000/api/cart/product/:pid [POST]
-http://localhost:5000/api/cart/product/:pid [PUT]
-http://localhost:5000/api/cart/product/:pid [DELETE]
-http://localhost:5000/api/cart [DELETE]
+https://backendcoder-production-abea.up.railway.app//api/cart [GET] => Ruta para visualizar el carrito
+https://backendcoder-production-abea.up.railway.app//api/cart [PUT] => Ruta para actualizar los productos del carrito
+https://backendcoder-production-abea.up.railway.app//api/cart/product/:pid [POST] => Ruta para agregar productos al carrito
+https://backendcoder-production-abea.up.railway.app//api/cart/product/:pid [PUT] => Ruta para actualizar la cantidad de un producto
+https://backendcoder-production-abea.up.railway.app//api/cart/product/:pid [DELETE] => Ruta para eliminar UN producto del carrito
+https://backendcoder-production-abea.up.railway.app//api/cart [DELETE] => Ruta para eliminar TODOS los productos del carrito
+https://backendcoder-production-abea.up.railway.app//api/cart/purchase [POST] => Ruta para generar ticket de compra
 
 ```
 ### Github Auth:
 ```
-http://localhost:5000/authSession/github [GET]
-http://localhost:5000/authSession/githubSession [GET]
+https://backendcoder-production-abea.up.railway.app//authSession/github [GET] 
+https://backendcoder-production-abea.up.railway.app//authSession/githubSession [GET]
+
 ```
 ### Sessions:
 ```
-http://localhost:5000/api/session/login [POST]
-http://localhost:5000/api/session/register [POST]
-http://localhost:5000/api/session/logout [GET]
-http://localhost:5000/api/session/current [GET] 
+https://backendcoder-production-abea.up.railway.app//api/session/login [POST] => Ruta para loguearse con un usuario
+https://backendcoder-production-abea.up.railway.app//api/session/register [POST] => Ruta para registrar un usuario
+https://backendcoder-production-abea.up.railway.app//api/session/logout [GET] => Ruta para cerrar sesion con un usuario
+https://backendcoder-production-abea.up.railway.app//api/session/current [GET] => Ruta para ver la sesion activa
 ```
 ### User:
 ```
-http://localhost:5000/api/user/register [POST]
+https://backendcoder-production-abea.up.railway.app//api/user [GET] => Ruta para visualizar TODOS los usuarios
+https://backendcoder-production-abea.up.railway.app//api/user/:uid/documents [POST] => Ruta para agregar una imagen a documents
+https://backendcoder-production-abea.up.railway.app//api/user [DELETE] => Ruta que elimina a los usuarios inactivos
+```
+### Vistas en la web:
+```
+https://backendcoder-production-abea.up.railway.app//login
+https://backendcoder-production-abea.up.railway.app//register
+https://backendcoder-production-abea.up.railway.app//forgotPassword
+https://backendcoder-production-abea.up.railway.app//resetPassword
+https://backendcoder-production-abea.up.railway.app//product
+https://backendcoder-production-abea.up.railway.app//cart
+https://backendcoder-production-abea.up.railway.app//profile
+https://backendcoder-production-abea.up.railway.app//chat
 ```
