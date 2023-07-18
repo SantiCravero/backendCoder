@@ -1,5 +1,5 @@
 const showProducts = async () => {
-    const response = await fetch(`https://backendcoder-production-abea.up.railway.app//api/product`, {
+    const response = await fetch(`https://backendcoder-production-abea.up.railway.app/api/product`, {
         method: 'GET'
     });
     const productJson = await response.json();
@@ -46,7 +46,7 @@ const showProducts = async () => {
         // Boton para agregar al carrito
         document.getElementById(`btn${product._id}`).addEventListener("click", async (e) => {
             e.preventDefault();
-            const productAddResponse = await fetch(`https://backendcoder-production-abea.up.railway.app//api/cart/product/${product._id}`, {
+            const productAddResponse = await fetch(`https://backendcoder-production-abea.up.railway.app/api/cart/product/${product._id}`, {
                 method: 'POST'
             });
             const prodJson = await productAddResponse.json();
@@ -58,7 +58,7 @@ const showProducts = async () => {
                     showConfirmButton: false,
                     timer: 2000
                 }).then(() => {
-                    window.location.href = `https://backendcoder-production-abea.up.railway.app//login`;
+                    window.location.href = `https://backendcoder-production-abea.up.railway.app/login`;
                 })
             }
             if (!productAddResponse.ok) {

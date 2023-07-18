@@ -1,5 +1,5 @@
 const showProfile = async()=>{
-    const response = await fetch(`https://backendcoder-production-abea.up.railway.app//api/session/current`, {
+    const response = await fetch(`https://backendcoder-production-abea.up.railway.app/api/session/current`, {
         method: 'GET',
     });
     const profileDiv = document.getElementById('profile')
@@ -43,7 +43,7 @@ const showProfile = async()=>{
     item.innerHTML = itemContent;
     profileDiv.appendChild(item)
     document.getElementById('btnLogout').addEventListener('click',async()=>{
-        const logoutResponse = await fetch(`https://backendcoder-production-abea.up.railway.app//api/session/logout`, {
+        const logoutResponse = await fetch(`https://backendcoder-production-abea.up.railway.app/api/session/logout`, {
             method: 'GET',
         });
         const logoutResponseJson = await logoutResponse.json()
@@ -56,7 +56,7 @@ const showProfile = async()=>{
                 showConfirmButton: false,
                 timer: 2000
             }).then(() => {
-                window.location.href = `https://backendcoder-production-abea.up.railway.app//login`;
+                window.location.href = `https://backendcoder-production-abea.up.railway.app/login`;
             })
         }else{
             return Swal.fire({
@@ -66,7 +66,7 @@ const showProfile = async()=>{
                 showConfirmButton: false,
                 timer: 2000
             }).then(() => {
-                window.location.href = `https://backendcoder-production-abea.up.railway.app//login`;
+                window.location.href = `https://backendcoder-production-abea.up.railway.app/login`;
             })
         }
  
