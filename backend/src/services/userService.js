@@ -36,7 +36,8 @@ export const createUser = async (user) => {
 
 export const deleteUserById = async (id) => {
     try {
-        return await userModel.findByIdAndDelete(id);
+        const users = await userModel.findByIdAndRemove(id)
+        return users
     } catch (error) {
         throw new Error(error);
     }
@@ -58,19 +59,19 @@ export const updateUser = async (id, info) => {
     }
 }
 
-export const findInactiveUsers = async (timeLimit) => {
+export const findInactiveUsers = async (dateTimeLimit) => {
     try {
-      const users = await userModel.find({ last_connection: { $lt: timeLimit } })
+      const users = await userModel.find({ last_connection: { $lt: dateTimeLimit } })
       return users
     } catch (error) {
       throw new Error(error)
     }
-}
+  }
   
-export const delInactiveUsers = async (timeLimit) => {
+  export const delInactiveUser = async (dateTimeLimit) => {
     try {
-        return await userModel.deleteMany({ last_connection: { $lt: timeLimit } })
+      return await userModel.deleteMany({ last_connection: { $lt: dateTimeLimit } })
     } catch (error) {
-        throw new Error(error)
+      throw new Error(error)
     }
-}
+  }
