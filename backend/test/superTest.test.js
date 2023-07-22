@@ -7,7 +7,7 @@ import Assert from 'assert'
 const expect = chai.expect
 const assert = Assert.strict
 
-const requester = supertest('https://backendcoder-production-abea.up.railway.app/');
+const requester = supertest('http://localhost:5000');
 
 await mongoose.connect(process.env.URLMONGODB)
 

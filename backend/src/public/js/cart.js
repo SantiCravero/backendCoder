@@ -8,7 +8,7 @@ const getCart = async () => {
         return Swal.fire({
             position: 'center',
             icon: 'error',
-            title: `Debe loguearse para visualizar el carrito`,
+            title: `Debe loguearse o usted no esta autorizado para esta ruta`,
             showConfirmButton: false,
             timer: 2000
         }).then(() => {
